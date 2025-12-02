@@ -1,0 +1,34 @@
+<app-livreur-navbar></app-livreur-navbar>
+
+<h2 class="titre">Commandes à prendre</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom & Prénom</th>
+      <th>Adresse</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let c of commandes">
+      <td>{{ c.utilisateur.nom }} {{ c.utilisateur.prenom }}</td>
+      <td>{{ c.utilisateur.adresse }}</td>
+
+      <td>
+        <button 
+          class="btn"
+          [ngClass]="{
+            'btn-rouge': !c.pris,
+            'btn-vert': c.pris
+          }"
+          (click)="valider(c)"
+          [disabled]="c.pris"
+        >
+          {{ c.pris ? 'Pris ✔' : 'Prendre' }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

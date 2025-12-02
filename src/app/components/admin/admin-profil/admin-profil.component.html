@@ -1,0 +1,76 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="profil-page" *ngIf="admin">
+
+  <div class="header-profil">
+    <h2>Mon profil administrateur</h2>
+    <a class="logout" (click)="deconnexion()">Déconnexion</a>
+  </div>
+
+  <!-- MODE AFFICHAGE -->
+  <div class="profil-card" *ngIf="!editMode">
+
+    <div class="avatar-container">
+      <img class="avatar" [src]="preview || getImageUrl()" />
+    </div>
+
+    <p class="name">{{ admin.nom }} {{ admin.prenom }}</p>
+
+    <div class="info-block">
+      <p><strong>Email :</strong> {{ admin.email }}</p>
+      <p><strong>Téléphone :</strong> {{ admin.telephone }}</p>
+      <p><strong>Adresse :</strong> {{ admin.adresse }}</p>
+    </div>
+
+    <div class="actions">
+      <button (click)="activerEdition()">Modifier</button>
+    </div>
+  </div>
+
+  <!-- MODE EDITION -->
+  <div class="profil-card" *ngIf="editMode">
+
+    <h3>Modifier le profil</h3>
+
+    <div class="avatar-edit">
+      <img class="avatar" [src]="preview || getImageUrl()" />
+
+      <label class="btn-upload">
+        Changer photo
+        <input type="file" accept="image/*" (change)="onFileSelected($event)">
+      </label>
+    </div>
+
+    <!-- FORMULAIRE -->
+    <form [formGroup]="profilForm" (ngSubmit)="enregistrer()">
+
+      <div class="form-grid">
+        <div class="left">
+          <label>Email</label>
+          <input type="email" formControlName="email">
+
+          <label>Nom</label>
+          <input type="text" formControlName="nom">
+
+          <label>Prénom</label>
+          <input type="text" formControlName="prenom">
+        </div>
+
+        <div class="right">
+          <label>Téléphone</label>
+          <input type="text" formControlName="telephone">
+
+          <label>Adresse</label>
+          <input type="text" formControlName="adresse">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="submit">Enregistrer</button>
+        <button type="button" class="secondary" (click)="annuler()">Annuler</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>

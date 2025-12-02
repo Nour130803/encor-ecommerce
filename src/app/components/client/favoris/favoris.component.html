@@ -1,0 +1,33 @@
+<div class="page-favoris">
+  <h2>Favoris 💕</h2>
+
+  <div class="liste-favoris">
+    <div class="carte-produit" *ngFor="let f of favoris">
+
+      <div class="image-container">
+        <img 
+          [src]="'http://localhost:8081/api/produits/images/' + f.produit.imageUrl.replace('uploads/', '')"
+          alt="{{ f.produit.nom }}"
+        >
+        <i class="fas fa-heart coeur"></i>
+      </div>
+
+      <h3>{{ f.produit.nom }}</h3>
+      <p>{{ f.produit.prix }} DT</p>
+
+      <button 
+        class="btn-panier"
+        [disabled]="f.produit.stock === 0"
+        (click)="ajouterAuPanier(f.produit.id)">
+        Ajouter au panier
+      </button>
+
+      <p class="rupture" *ngIf="f.produit.stock === 0">
+        ❌ Produit en rupture de stock
+      </p>
+
+      <i class="fas fa-trash supprimer" (click)="supprimerFavori(f.id)"></i>
+
+    </div>
+  </div>
+</div>

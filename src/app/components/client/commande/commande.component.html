@@ -1,0 +1,53 @@
+<div class="commande-page">
+  <h2>Mes commandes</h2>
+
+  <table class="commande-table" *ngIf="commandes.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Total</th>
+        <th>État</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let c of commandes">
+        <td>{{ c.idCommande }}</td>
+        <td>{{ c.dateCommande | date:'dd/MM/yyyy' }}</td>
+        <td>{{ c.total }} DT</td>
+        <td>{{ c.etat }}</td>
+
+        <td class="actions-col">
+
+          <!-- Voir suivi -->
+          <button class="btn-suivi" (click)="ouvrirSuivi(c)">
+            Voir suivi
+          </button>
+
+          <!-- Annuler si pas encore en livraison -->
+          <button
+            *ngIf="c.etat === 'EN_ATTENTE' || c.etat === 'VALIDEE' || c.etat === 'EN_PREPARATION'"
+            class="btn-annuler"
+            (click)="annulerCommande(c.idCommande)">
+            Annuler
+          </button>
+
+          <!-- Supprimer seulement si livrée ou annulée -->
+          <button
+            *ngIf="c.etat === 'LIVREE' || c.etat === 'ANNULEE'"
+            class="btn-supprimer"
+            (click)="supprimerCommande(c.idCommande)">
+            Supprimer
+          </button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="commandes.length === 0" class="no-orders">
+    Vous n'avez aucune commande pour le moment 🌸
+  </p>
+</div>

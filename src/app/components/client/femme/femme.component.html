@@ -1,0 +1,39 @@
+<div class="categorie-page">
+  <aside class="sidebar">
+    <h3>Types de produits</h3>
+    <ul>
+      <li *ngFor="let type of types"
+          [class.active]="type.idType === typeSelectionne"
+          (click)="filtrerParType(type.idType)">
+        {{ type.nomType }}
+      </li>
+    </ul>
+  </aside>
+
+  <section class="produits">
+    <h2>Femme</h2>
+    <div class="liste-produits">
+      <div class="carte-produit" *ngFor="let p of produits">
+        <div class="image-container">
+          <img [src]="'http://localhost:8081/api/produits/images/' + p.imageUrl.replace('uploads/', '')"
+               alt="{{ p.nom }}">
+          <button class="favori-btn" (click)="ajouterFavoris(p)">♡</button>
+        </div>
+
+        <h3>{{ p.nom }}</h3>
+        <p>{{ p.prix }} DT</p>
+
+        <button 
+          (click)="ajouterAuPanier(p.id)"
+          [disabled]="p.stock === 0"
+          class="btn-panier">
+          Ajouter au panier
+        </button>
+
+        <p class="rupture" *ngIf="p.stock === 0">
+          ❌ Produit en rupture de stock
+        </p>
+      </div>
+    </div>
+  </section>
+</div>

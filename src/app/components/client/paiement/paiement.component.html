@@ -1,0 +1,47 @@
+<div class="paiement-page">
+
+  <h2>Paiement</h2>
+
+  <h3>Méthode de paiement</h3>
+
+  <div class="paiement-options">
+    <label>
+      <input type="radio" name="p" [(ngModel)]="modePaiement" value="a_la_livraison">
+      🏠 À la livraison
+    </label>
+
+    <label>
+      <input type="radio" name="p" [(ngModel)]="modePaiement" value="en_ligne">
+      💳 Carte bancaire
+    </label>
+  </div>
+
+  <div *ngIf="modePaiement === 'en_ligne'" class="card-box">
+    <input type="text" placeholder="Numéro de carte">
+    <div class="row">
+      <input type="text" placeholder="Expiration">
+      <input type="text" placeholder="CVV">
+    </div>
+  </div>
+
+  <h3>Livraison</h3>
+
+  <div class="livraison-options">
+    <label>
+      <input type="radio" name="liv" [(ngModel)]="modeLivraison" value="poste">
+      📮 Poste
+    </label>
+
+    <label>
+      <input type="radio" name="liv" [(ngModel)]="modeLivraison" value="livreur">
+      🚚 Livreur
+    </label>
+  </div>
+
+  <div class="total-box">
+    <p>Total :</p>
+    <h3>{{ total }} DT</h3>
+  </div>
+
+  <button class="payer-btn" (click)="payer()">Valider</button>
+</div>

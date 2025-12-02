@@ -1,0 +1,106 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="content">
+
+  <!-- 🔍 Recherche produit -->
+  <div class="liste-produits">
+    
+    <input 
+      type="text" 
+      placeholder="Rechercher..." 
+      class="search-box" 
+      [(ngModel)]="searchText"
+    >
+
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Produit</th>
+          <th>Prix</th>
+          <th>Stock</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let produit of filtrerProduits()">
+
+          <!-- IMAGE -->
+          <td>
+            <img *ngIf="produit.imageUrl"
+                 [src]="'http://localhost:8081/api/produits/images/' + produit.imageUrl.replace('uploads/', '')"
+                 class="image-mini">
+          </td>
+
+          <!-- INFOS -->
+          <td>{{ produit.nom }}</td>
+          <td>{{ produit.prix }} DT</td>
+          <td>{{ produit.stock }}</td>
+
+          <!-- BOUTONS -->
+          <td>
+            <button class="btn-update" (click)="selectionnerProduit(produit)">
+              Modifier
+            </button>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FORMULAIRE MODIFICATION -->
+  <div class="form-container" *ngIf="produitSelectionne">
+
+    <h3>Modifier le produit</h3>
+
+    <!-- IMAGE -->
+    <div class="image-upload">
+      <img *ngIf="previewUrl"
+           [src]="previewUrl || 'assets/default-preview.png'"
+           class="image-preview">
+
+      <label>📸 Modifier l'image</label>
+      <input type="file" (change)="onFileSelected($event)">
+    </div>
+
+    <div class="form-fields">
+
+      <!-- NOM -->
+      <input type="text" placeholder="Nom de produit" [(ngModel)]="nom">
+
+      <!-- DESCRIPTION -->
+      <textarea placeholder="Description" [(ngModel)]="description"></textarea>
+
+      <!-- CATÉGORIE -->
+      <select [(ngModel)]="categorie">
+        <option value="">-- Choisir catégorie --</option>
+        <option value="Femme">Femme</option>
+        <option value="Homme">Homme</option>
+        <option value="Enfant">Enfant</option>
+      </select>
+
+      <!-- TYPES PRODUIT -->
+      <select [(ngModel)]="selectedType">
+        <option value="">-- Sélectionner type produit --</option>
+        <option *ngFor="let t of types" [value]="t.idType">
+          {{ t.nomType }}
+        </option>
+      </select>
+
+      <!-- PRIX + STOCK -->
+      <div class="row">
+        <input type="number" placeholder="Prix" [(ngModel)]="prix">
+        <input type="number" placeholder="Stock" [(ngModel)]="stock">
+      </div>
+
+      <!-- BOUTON -->
+      <button class="submit-btn" (click)="modifierProduit()">
+        ✔ Mettre à jour
+      </button>
+
+    </div>
+  </div>
+
+</div>

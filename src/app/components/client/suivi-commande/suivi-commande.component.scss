@@ -1,0 +1,71 @@
+.suivi-container {
+  width: 90%;
+  margin: 20px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.titre {
+  text-align: center;
+  font-size: 26px;
+  color: #a54d67;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* 🌸 Ligne d'étapes */
+.steps {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+.step {
+  text-align: center;
+  width: 24%;
+  padding: 15px 10px;
+  border-radius: 12px;
+  background: #fdeef2;
+  color: #090909;
+  transition: 0.3s ease-in-out;
+  border: 2px solid #f5c5cf;
+
+  .icon {
+    font-size: 30px;
+    margin-bottom: 8px;
+    color: #c28595;
+    transition: 0.3s;
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+/* Étape active */
+.step.active {
+  background: #30e2aa;
+  border-color: #0f0f0f;
+
+  .icon {
+    color: #140909;
+    transform: scale(1.1);
+  }
+}
+
+.info-box {
+  margin-top: 25px;
+  padding: 15px;
+  background: #fdeef2;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #4a2d2d;
+
+  strong {
+    color: #a54d67;
+  }
+}

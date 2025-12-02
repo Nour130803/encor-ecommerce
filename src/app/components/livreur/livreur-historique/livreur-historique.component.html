@@ -1,0 +1,49 @@
+<app-livreur-navbar></app-livreur-navbar>
+
+<h2 class="titre">📜 Historique des livraisons</h2>
+
+<!-- Commandes en cours -->
+<h3 class="section-title">🚚 Commandes en cours de livraison</h3>
+
+<table *ngIf="validees.length > 0">
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Adresse</th>
+      <th>État</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let cmd of validees">
+      <td>{{ cmd.utilisateur.nom }} {{ cmd.utilisateur.prenom }}</td>
+      <td>{{ cmd.utilisateur.adresse }}</td>
+      <td class="etat en-cours">En cours</td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="validees.length === 0" class="vide">Aucune commande en cours.</p>
+
+<!-- Commandes livrées -->
+<h3 class="section-title">✔ Commandes livrées</h3>
+
+<table *ngIf="livrees.length > 0">
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Adresse</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let cmd of livrees">
+      <td>{{ cmd.utilisateur.nom }} {{ cmd.utilisateur.prenom }}</td>
+      <td>{{ cmd.utilisateur.adresse }}</td>
+      <td>{{ cmd.date_commande | date:'short' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="livrees.length === 0" class="vide">Aucune commande livrée.</p>

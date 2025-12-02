@@ -1,0 +1,47 @@
+<!-- 🌸 Bloc d'introduction -->
+<div class="intro-box">
+  <p class="welcome-text">
+    bienvenue dans l’univers <strong>Encor</strong> – La touche finale parfaite 🌸
+  </p>
+  <h1 class="logo">ENCOR</h1>
+  
+</div>
+
+<!-- 🎀 Bloc principal d'inscription -->
+<div class="inscription-container">
+    <div class="header-line"></div>
+  <h2 class="title">Inscription</h2>
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="registerForm" class="form-container">
+    <div class="left">
+      <label>Nom</label>
+      <input type="text" formControlName="nom">
+
+      <label>Prénom</label>
+      <input type="text" formControlName="prenom">
+
+      <label>Téléphone</label>
+      <input type="text" formControlName="telephone">
+
+      <label>Adresse</label>
+      <input type="text" formControlName="adresse">
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="right">
+      <label>Adresse e-mail ✉️</label>
+      <input type="email" formControlName="email">
+
+      <label>Mot de passe</label>
+      <input type="password" formControlName="motDePasse">
+    </div>
+  </form>
+
+  <button class="submit-btn" (click)="onSubmit()">Créer un compte</button>
+
+  <p class="footer-text">
+    Vous avez déjà un compte ?
+    <a routerLink="/connexion">connexion 🌸</a>
+  </p>
+</div>

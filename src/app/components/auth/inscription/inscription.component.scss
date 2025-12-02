@@ -1,0 +1,144 @@
+/* 🌸 Cadre d'intro (haut de la page) */
+
+.intro-box {
+  background-color: #ffffff;
+
+  padding: 15px 20px;
+  width: fit-content;
+  margin: 40px auto 20px auto;
+ 
+}
+/* 🌸 Texte d'introduction centré */
+.welcome-text {
+  font-size: 15px;
+  color: #4a2b2b;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.welcome-text strong {
+  font-weight: 600;
+  color: #7b3e3e;
+}
+
+/* 💎 Logo principal */
+.logo {
+  font-family: 'Playfair Display', serif;
+  color: #5a2d2d;
+  font-size: 32px;
+  margin: 15px 0 10px 0;
+  text-align: center;
+}
+
+/* 🌸 Bande rose fine décorative */
+.header-line {
+  height: 6px;
+  width: 100%;
+  background-color: #e5a4b1;
+  margin: 0 auto;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(229, 164, 177, 0.3);
+}
+
+/* 🎀 Container principal du formulaire */
+.inscription-container {
+  background-color: #fdeef2;
+  padding: px 20px;
+ height: 555px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  font-family: 'Poppins', sans-serif;
+  color: #5a2d2d;
+}
+
+/* 🌷 Titre principal */
+.title {
+  color: #e91e63;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* 💐 Formulaire */
+.form-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  text-align: left;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #5a2d2d;
+}
+
+input {
+  border: 1px solid #e0bfc2;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 12px;
+  background-color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #d38c9b;
+  box-shadow: 0 0 5px #f1b6c2;
+}
+
+/* 🌸 Ligne verticale entre les champs */
+.divider {
+  width: 1px;
+  background-color: #d38c9b;
+}
+
+/* 💗 Bouton d’action */
+.submit-btn {
+  background-color: #eec7cc;
+  color: #4a2b2b;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.submit-btn:hover {
+  background-color: #e5a4b1;
+  transform: scale(1.03);
+}
+
+/* 💕 Lien de connexion */
+.footer-text {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #333;
+}
+
+.footer-text a {
+  color: #a54d67;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}

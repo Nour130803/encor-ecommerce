@@ -1,0 +1,40 @@
+<section class="carousel" *ngIf="slides.length > 0">
+  <div class="arrow left" (click)="previousSlide()">&#10094;</div>
+
+  <div class="slide">
+    <div class="center-image">
+      <img [src]="slides[currentIndex].image" alt="Produit" />
+    </div>
+
+    <div class="text-box">
+      <h2>LA TOUCHE FINALE PARFAITE</h2>
+      <button routerLink="/nouveautes">DÉCOUVRIR</button>
+    </div>
+  </div>
+
+  <div class="arrow right" (click)="nextSlide()">&#10095;</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-block">
+    <h3>Boutique</h3>
+    <p routerLink="/femme">Femme</p>
+    <p routerLink="/homme">Homme</p>
+    <p routerLink="/enfants">Enfants</p>
+  </div>
+
+  <div class="footer-block">
+    <h3>Information</h3>
+    <p>À propos</p>
+    <p>Nouveautés collection</p>
+  </div>
+
+  <div class="footer-block">
+    <h3>Service client</h3>
+    <p>Recherche</p>
+    <p routerLink="/commande">Suivi de commande</p>
+    <p>Livraison</p>
+  </div>
+
+</footer>

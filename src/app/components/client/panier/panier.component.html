@@ -1,0 +1,60 @@
+<div class="panier-page">
+  <h2>Panier</h2>
+
+  <table class="panier-table">
+    <thead>
+      <tr>
+        <th>Produit</th>
+        <th>Prix</th>
+        <th>Quantité</th>
+        <th>Total</th>
+        <th>Supprimer</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of panier">
+        <!-- PRODUIT + IMAGE -->
+        <td class="produit-info">
+          <img
+            [src]="'http://localhost:8081/api/produits/images/' + item.produit.imageUrl.replace('uploads/', '')"
+            alt="Image produit"
+          />
+          <span>{{ item.produit.nom }}</span>
+        </td>
+
+        <!-- PRIX -->
+        <td>{{ item.produit.prix }} DT</td>
+
+        <!-- QUANTITÉ -->
+        <td class="quantite">
+          <button (click)="decrement(item)">-</button>
+          <span>{{ item.quantite }}</span>
+          <button (click)="increment(item)">+</button>
+        </td>
+
+        <!-- TOTAL PAR LIGNE -->
+        <td>{{ item.produit.prix * item.quantite }} DT</td>
+
+        <!-- SUPPRIMER -->
+        <td>
+          <i class="fas fa-trash supprimer" (click)="supprimer(item.id)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr />
+
+  <!-- TOTAL GLOBAL -->
+  <p class="total-panier">
+    Total du panier : <strong>{{ total() }} DT</strong>
+  </p>
+
+  <!-- VALIDATION COMMANDE -->
+  <div class="actions">
+    <button class="valider" (click)="validerCommande()">
+      Valider la commande
+    </button>
+  </div>
+</div>

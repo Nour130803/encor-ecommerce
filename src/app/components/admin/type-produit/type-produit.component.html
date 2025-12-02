@@ -1,0 +1,30 @@
+<app-admin-navbar></app-admin-navbar>
+
+<h2>✨ Ajouter un type de produit</h2>
+
+<div class="form-box">
+  <input type="text" placeholder="Nom du type (ex: Bracelet)" [(ngModel)]="nomType">
+  <button (click)="ajouter()">Ajouter</button>
+</div>
+
+<h3>📋 Liste des types</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let t of types">
+      <td>{{ t.idType }}</td>
+      <td>{{ t.nomType }}</td>
+      <td>
+        <button class="delete" (click)="supprimer(t.idType)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

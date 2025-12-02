@@ -1,0 +1,50 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="form-container">
+
+  <!-- IMAGE -->
+  <div class="image-section">
+    <label class="upload-btn">
+      Choisir une image
+      <input type="file" accept="image/*" (change)="onFileSelected($event)">
+    </label>
+
+    <div class="preview-box">
+      <img *ngIf="preview" [src]="preview">
+      <p *ngIf="!preview">Aucune image sélectionnée</p>
+    </div>
+  </div>
+
+  <!-- FORMULAIRE -->
+  <div class="form-fields">
+
+    <input type="text" placeholder="Nom du produit" [(ngModel)]="nom">
+
+    <textarea placeholder="Description" [(ngModel)]="description"></textarea>
+
+    <label>Catégorie</label>
+    <select [(ngModel)]="categorie">
+      <option value="">-- Sélectionner --</option>
+      <option value="Femme">Femme</option>
+      <option value="Homme">Homme</option>
+      <option value="Enfant">Enfant</option>
+    </select>
+
+    <label>Type produit</label>
+    <select [(ngModel)]="selectedType">
+      <option value="">-- Sélectionner type --</option>
+      <option *ngFor="let t of types" [value]="t.idType">
+        {{ t.nomType }}
+      </option>
+    </select>
+
+    <div class="row">
+      <input type="number" placeholder="Prix" [(ngModel)]="prix">
+      <input type="number" placeholder="Stock" [(ngModel)]="stock">
+    </div>
+
+    <button class="submit-btn" (click)="onSubmit()">ENREGISTRER</button>
+
+  </div>
+
+</div>

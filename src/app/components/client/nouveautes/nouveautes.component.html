@@ -1,0 +1,36 @@
+<div class="nouveautes-page">
+
+  <h2 class="section-title">Nouveautés</h2>
+
+  <div class="produits-container">
+    <div class="produit-card" *ngFor="let produit of produits">
+
+      <div class="image-container">
+
+        <img 
+          [src]="'http://localhost:8081/api/produits/images/' + 
+                 (produit.imageUrl ? produit.imageUrl.replace('uploads/', '') : '')"
+          alt="{{ produit.nom }}"
+        >
+
+        <button class="favori-btn" (click)="ajouterFavoris(produit)">♡</button>
+      </div>
+
+      <h3 class="produit-nom">{{ produit.nom }}</h3>
+      <p class="produit-prix">{{ produit.prix }} DT</p>
+
+      <button 
+        (click)="ajouterAuPanier(produit.id)"
+        [disabled]="produit.stock === 0"
+        class="btn-panier">
+        Ajouter au panier
+      </button>
+
+      <p class="rupture" *ngIf="produit.stock === 0">
+        ❌ Produit en rupture de stock
+      </p>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,93 @@
+.profil-page {
+  width: 95%;
+  max-width: 500px;
+  margin: 20px auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header-profil {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-profil h2 {
+  color: #a54d67;
+  font-weight: 700;
+}
+
+.logout {
+  color: #c94a5e;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.profil-card {
+  margin-top: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f1b6c2;
+}
+
+.name {
+  font-size: 22px;
+  margin: 10px 0;
+  font-weight: 700;
+  color: #6e3c3c;
+}
+
+.info-block p {
+  text-align: left;
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.actions button {
+  background: #e5a4b1;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.btn-upload {
+  margin-top: 10px;
+  cursor: pointer;
+  background: #f3c4ce;
+  padding: 7px 15px;
+  border-radius: 5px;
+}
+
+.form-grid {
+  display: flex;
+  gap: 20px;
+  text-align: left;
+}
+
+.left, .right {
+  flex: 1;
+}
+
+input {
+  width: 100%;
+  padding: 9px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.secondary {
+  background: #ccc !important;
+}

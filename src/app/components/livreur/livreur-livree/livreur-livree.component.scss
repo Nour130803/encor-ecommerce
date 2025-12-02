@@ -1,0 +1,84 @@
+/* ===== TITRE ===== */
+.titre {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 25px 0 20px;
+  color: #b30059; /* couleur chic ENCOR */
+}
+
+
+/* ===== TABLE ===== */
+table {
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+  thead {
+    background: #9e6e76; /* rose très léger */
+    th {
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: left;
+      color: #7a0043;
+      border-bottom: 2px solid #f3c4dd;
+    }
+  }
+
+  tbody {
+
+    td {
+      padding: 14px;
+      font-size: 15px;
+      border-bottom: 1px solid #f5f5f5;
+    }
+
+    tr {
+      transition: 0.3s;
+
+      &:hover {
+        background: #fff5fa;
+      }
+    }
+  }
+}
+
+
+/* ===== BOUTON ===== */
+.btn {
+  padding: 8px 15px;
+  background: #b30059;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+
+  &:hover {
+    background: #7a0043;
+  }
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+  }
+
+  th, td {
+    padding: 10px !important;
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}

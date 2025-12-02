@@ -1,0 +1,30 @@
+<!-- 🌸 Bande blanche d’introduction -->
+<div class="intro-box">
+  <p class="welcome-text">
+    bienvenue dans l’univers <strong>Encor</strong> – La touche finale parfaite 🌸
+  </p>
+  <h1 class="logo">ENCOR</h1>
+</div>
+
+<!-- 🎀 Bloc principal -->
+<div class="connexion-container">
+  <div class="header-line"></div>
+  <h2 class="title">Connexion à votre compte</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <label>Adresse e-mail</label>
+    <input type="email" formControlName="email" />
+
+    <label>Mot de passe</label>
+    <input type="password" formControlName="motDePasse" />
+
+    <button class="submit-btn" type="submit">Se connecter</button>
+  </form>
+
+  <p class="footer-text">
+    <a routerLink="/motdepasse">Mot de passe oublié ?</a><br />
+    Vous n’avez pas encore de compte ? 
+    <a routerLink="/inscription">créez un compte 🌸</a>
+  </p>
+</div>

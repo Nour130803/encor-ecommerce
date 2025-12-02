@@ -1,0 +1,37 @@
+<header class="header">
+  <!-- Bande supérieure -->
+  <div class="top-bar">
+    <div class="left">Bienvenue</div>
+    <div class="right">
+      <i class="fas fa-search" (click)="toggleSearch()" style="cursor:pointer;"></i>
+  <input *ngIf="showSearch" 
+         type="text" 
+         placeholder="Rechercher..." 
+         [(ngModel)]="motCle" 
+         (keyup.enter)="rechercher()" 
+         class="search-input">
+      <i class="fas fa-user" (click)="ouvrirProfil()" style="cursor: pointer;"></i>
+
+      <i class="fas fa-heart" (click)="ouvrirFavoris()" style="cursor: pointer;"></i>
+
+      <i class="fas fa-shopping-cart" (click)="ouvrirPanier()" style="cursor: pointer;"></i>
+
+
+    </div>
+  </div>
+
+  <!-- Logo + Slogan -->
+  <div class="main-bar">
+    <h1>ENCOR</h1>
+    <p class="slogan">🌸 La touche finale parfaite</p>
+
+    <!-- Liens du menu -->
+    <nav class="main-nav">
+      <a routerLink="/nouveautes" routerLinkActive="active">Nouveautés</a>
+      <a routerLink="/femme" routerLinkActive="active">Femme</a>
+      <a routerLink="/homme" routerLinkActive="active">Homme</a>
+      <a routerLink="/enfants" routerLinkActive="active">Enfants</a>
+      <a routerLink="/commande" routerLinkActive="active">Commande</a>
+    </nav>
+  </div>
+</header>

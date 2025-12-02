@@ -1,0 +1,49 @@
+h2, h3 {
+  text-align: center;
+  color: #8a4b65;
+}
+
+.form-box {
+  width: 400px;
+  margin: 20px auto;
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #d3b0c3;
+  border-radius: 6px;
+}
+
+button {
+  background: #8a4b65;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #6e3a50;
+}
+
+table {
+  width: 80%;
+  margin: 30px auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  border-bottom: 1px solid #e5c9d8;
+  padding: 10px;
+}
+
+.delete {
+  background: #d64561;
+}
+.delete:hover {
+  background: #b7344f;
+}

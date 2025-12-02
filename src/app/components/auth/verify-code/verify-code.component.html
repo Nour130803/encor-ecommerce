@@ -1,0 +1,31 @@
+<!-- 🌸 Bande blanche d’introduction -->
+<div class="intro-box">
+  <p class="welcome-text">
+    bienvenue dans l’univers <strong>Encor</strong> – La touche finale parfaite 🌸
+  </p>
+  <h1 class="logo">ENCOR</h1>
+</div>
+
+<!-- 🎀 Bloc principal : Vérification du code -->
+<div class="connexion-container">
+  <div class="header-line"></div>
+  <h2 class="title">Vérification de votre code</h2>
+
+  <p class="info-text">
+    Un code de vérification a été envoyé à <strong>{{ email }}</strong>. 🔐<br />
+    Veuillez le saisir ci-dessous :
+  </p>
+
+  <form>
+    <label>Code de vérification</label>
+    <input type="text" [(ngModel)]="code" placeholder="Entrez votre code" name="code" />
+
+    <button class="submit-btn" type="button" (click)="verifier()">
+      Vérifier le code
+    </button>
+  </form>
+
+  <p class="footer-text">
+    Vous n’avez rien reçu ? <a routerLink="/motdepasse">Renvoyer le code</a>
+  </p>
+</div>

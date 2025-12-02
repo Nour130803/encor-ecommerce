@@ -1,0 +1,107 @@
+<app-admin-navbar></app-admin-navbar>
+
+<h2>📦 Gestion des commandes</h2>
+
+<!-- 🔍 BARRE DE RECHERCHE -->
+<input
+  type="text"
+  placeholder="Rechercher une commande..."
+  class="search-box"
+  [(ngModel)]="searchText"
+/>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Client</th>
+      <th>Total</th>
+      <th>Date</th>
+      <th>État</th>
+      <th>Mode livraison</th>
+      <th>Livreur</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let c of filtrerCommandes()">
+
+      <!-- ID commande -->
+      <td>{{ c.idCommande }}</td>
+
+      <!-- Client -->
+      <td>{{ c.utilisateur.nom }} {{ c.utilisateur.prenom }}</td>
+
+      <!-- Total -->
+      <td>{{ c.total }} DT</td>
+
+      <!-- Date -->
+      <td>{{ c.dateCommande | date:'short' }}</td>
+
+      <!-- État stylisé -->
+      <td>
+        <span [ngClass]="etatClass(c.etat)">
+          {{ c.etat }}
+        </span>
+      </td>
+
+      <!-- Mode livraison -->
+      <td>{{ c.modeLivraison }}</td>
+
+      <!-- Livreur -->
+      <td>
+        <span *ngIf="c.livreur">
+          {{ c.livreur.nom }} {{ c.livreur.prenom }}
+        </span>
+        <span *ngIf="!c.livreur">—</span>
+      </td>
+
+      <!-- Actions -->
+      <td>
+
+        <!-- 🟡 1 — EN ATTENTE : bouton valider -->
+        <button
+          *ngIf="c.etat === 'EN_ATTENTE'"
+          class="btn-valider"
+          (click)="valider(c.idCommande)"
+        >
+          Valider
+        </button>
+
+        <!-- 🔵 2 — VALIDEE + MANUEL = EN PRÉPARATION -->
+        <button
+          *ngIf="c.etat === 'VALIDEE' && c.modeLivraison === 'manuel'"
+          class="btn-cours"
+          (click)="passerEnCours(c.idCommande)"
+        >
+          En préparation
+        </button>
+
+        <!-- 🔵 3 — VALIDEE + POSTE = EN COURS DE LIVRAISON -->
+        <button
+          *ngIf="c.etat === 'VALIDEE' && c.modeLivraison === 'poste'"
+          class="btn-livraison"
+          (click)="passerEnCoursLivraison(c.idCommande)"
+        >
+          En cours de livraison
+        </button>
+
+        <!-- 🟢 4 — LIVRÉE PAR POSTE -->
+        <button
+          *ngIf="
+            c.modeLivraison === 'poste' &&
+            c.livreur == null &&
+            c.etat === 'EN_COURS_DE_LIVRAISON'
+          "
+          class="btn-livree"
+          (click)="marquerLivree(c.idCommande)"
+        >
+          Marquer livrée ✔
+        </button>
+
+      </td>
+
+    </tr>
+  </tbody>
+</table>

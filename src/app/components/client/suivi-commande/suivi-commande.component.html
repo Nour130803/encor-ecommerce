@@ -1,0 +1,38 @@
+<div class="suivi-container" *ngIf="commande">
+
+  <h2 class="titre">Suivi de commande #{{ commande.idCommande }}</h2>
+
+  <div class="steps">
+
+    <!-- Étape 1 -->
+    <div class="step" [class.active]="isActive(['EN_ATTENTE','VALIDEE','EN_PREPARATION','EN_COURS_DE_LIVRAISON','LIVREE'])">
+      <i class="fas fa-clock icon"></i>
+      <p>Commande reçue</p>
+    </div>
+
+    <!-- Étape 2 -->
+    <div class="step" [class.active]="isActive(['EN_PREPARATION','EN_COURS_DE_LIVRAISON','LIVREE'])">
+      <i class="fas fa-box icon"></i>
+      <p>Préparation</p>
+    </div>
+
+    <!-- Étape 3 -->
+    <div class="step" [class.active]="isActive(['EN_COURS_DE_LIVRAISON','LIVREE'])">
+      <i class="fas fa-truck icon"></i>
+      <p>En livraison</p>
+    </div>
+
+    <!-- Étape 4 -->
+    <div class="step" [class.active]="isActive(['LIVREE'])">
+      <i class="fas fa-check-circle icon"></i>
+      <p>Livrée</p>
+    </div>
+
+  </div>
+
+  <div class="info-box">
+    <p><strong>Mode de livraison :</strong> {{ commande.modeLivraison}}</p>
+    <p><strong>Date estimée :</strong> {{ dateEstimee }}</p>
+  </div>
+
+</div>

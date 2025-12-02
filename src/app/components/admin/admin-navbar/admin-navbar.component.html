@@ -1,0 +1,31 @@
+<header class="header">
+  <!-- Bande supérieure -->
+  <div class="top-bar">
+    <div class="left">Admin</div>
+
+    <div class="right">
+
+      
+
+      <!-- 👤 Profil admin -->
+      <i class="fas fa-user"
+         (click)="ouvrirProfil()"
+         style="cursor: pointer;"></i>
+
+    </div>
+  </div>
+
+  <!-- Logo + Slogan -->
+  <div class="main-bar">
+    <h1>ENCOR</h1>
+    <p class="slogan">🌸 La touche finale parfaite</p>
+
+    <nav class="main-nav">
+      <a routerLink="/admin/type-produit" routerLinkActive="active">type-produit</a>
+      <a routerLink="/admin/ajouter-produit" routerLinkActive="active">Ajouter produit</a>
+      <a routerLink="/admin/modifier-produit" routerLinkActive="active">Mettre à jour</a>
+      <a routerLink="/admin/commandes" routerLinkActive="active">Commandes</a>
+      
+    </nav>
+  </div>
+</header>

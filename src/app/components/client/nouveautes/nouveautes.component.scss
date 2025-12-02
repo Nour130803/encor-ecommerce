@@ -1,0 +1,115 @@
+.nouveautes-page {
+  background-color: #f4d9d9;
+  padding: 40px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.section-title {
+  color: #4a2b2b;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.produits-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.produit-card {
+  background-color: #fff;
+  width: 190px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.produit-card:hover {
+  transform: translateY(-5px);
+}
+
+.image-container {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.favori-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: white;
+  border: none;
+  color: #a1555f;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.produit-nom {
+  font-size: 14px;
+  color: #2b1a1a;
+  margin: 8px 0 4px 0;
+}
+
+.produit-prix {
+  font-weight: 600;
+  color: #3c2020;
+  margin-bottom: 8px;
+}
+
+.btn-panier {
+  background-color: #c79a9a;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-panier:hover {
+  background-color: #b18181;
+}
+
+.bottom-section {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card-info {
+  background-color: #fcecec;
+  width: 250px;
+  height: 150px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: 500;
+  color: #3b1f1f;
+}
+
+.gift-img {
+  width: 70px;
+  margin-top: 10px;
+}

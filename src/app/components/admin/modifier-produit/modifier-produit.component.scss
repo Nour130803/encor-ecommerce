@@ -1,0 +1,76 @@
+.content {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.liste-produits {
+  width: 45%;
+}
+
+.search-box {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    text-align: left;
+  }
+}
+
+.image-mini {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.form-container {
+  width: 50%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ddd;
+}
+
+.image-upload {
+  margin-bottom: 15px;
+}
+
+.image-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  input, textarea, select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+  }
+}
+
+.submit-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #962d2d;
+  color: white;
+  cursor: pointer;
+}

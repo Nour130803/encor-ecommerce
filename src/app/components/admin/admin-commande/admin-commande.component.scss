@@ -1,0 +1,137 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+/* Couleurs états */
+.etat-attente {
+  color: orange;
+  font-weight: bold;
+}
+
+.etat-valide {
+  color: green;
+  font-weight: bold;
+}
+
+.etat-cours {
+  color: #0066ff;
+  font-weight: bold;
+}
+
+.etat-annule {
+  color: red;
+  font-weight: bold;
+}
+
+.etat-termine {
+  color: purple;
+  font-weight: bold;
+}
+
+/* Boutons */
+.btn-valider {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-cours {
+  background: #0066ff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.search-box {
+  width: 50%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin: 15px 0;
+  font-size: 15px;
+  display: block;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  background: #9e6e76;
+  padding: 10px;
+  text-align: left;
+}
+
+.table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Couleurs état */
+.etat-attente { color: #d18500; }
+.etat-valide { color: #1b9a27; }
+.etat-cours { color: #005bbb; }
+.etat-annule { color: #c30000; }
+.etat-termine { color: #4b0082; }
+
+.btn-valider {
+  background: #4CAF50;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-cours {
+  background: #005BBB;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.etat-attente {
+  color: #c58a00;
+  font-weight: bold;
+}
+
+.etat-valide {
+  color: #0084ff;
+  font-weight: bold;
+}
+
+.etat-preparation {
+  color: #8a2be2;
+  font-weight: bold;
+}
+
+.etat-livraison {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.etat-terminee {
+  color: #aa00aa;
+  font-weight: bold;
+}
+
+.etat-annulee {
+  color: #d00000;
+  font-weight: bold;
+}

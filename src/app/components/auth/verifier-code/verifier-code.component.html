@@ -1,0 +1,25 @@
+<!-- 🌸 Bande d’introduction -->
+<div class="intro-box">
+  <p class="welcome-text">
+    bienvenue dans l’univers <strong>Encor</strong> – La touche finale parfaite 🌸
+  </p>
+  <h1 class="logo">ENCOR</h1>
+</div>
+<div class="header-line"></div>
+<!-- 🎀 Conteneur principal -->
+<div class="verif-container">
+  
+  <h2 class="title">vérifier le code</h2>
+  <p class="instruction">entrez le code que nous vous avons envoyé par e-mail</p>
+
+  <div class="code-box">
+    <input type="text" maxlength="3" [(ngModel)]="code" placeholder="___" />
+  </div>
+
+  <button class="submit-btn" (click)="onVerify()">vérifier</button>
+
+  <p class="footer-text">
+    Vous n’avez pas reçu le code ?
+    <a (click)="onResend()">Renvoyer 🌸</a>
+  </p>
+</div>

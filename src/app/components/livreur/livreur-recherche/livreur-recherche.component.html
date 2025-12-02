@@ -1,0 +1,38 @@
+<app-livreur-navbar></app-livreur-navbar>
+
+<h2 class="titre">Résultat de recherche</h2>
+
+<div class="info">
+  <p>Recherche : <strong>{{ mot }}</strong></p>
+</div>
+
+<!-- Chargement -->
+<div *ngIf="isLoading" class="loading">
+  🔄 Recherche en cours...
+</div>
+
+<!-- Aucun résultat -->
+<div *ngIf="!isLoading && resultats.length === 0" class="no-result">
+  ❌ Aucun résultat trouvé.
+</div>
+
+<!-- Résultats -->
+<table *ngIf="!isLoading && resultats.length > 0" class="table-result">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Client</th>
+      <th>Adresse</th>
+      <th>État</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let c of resultats">
+      <td>{{ c.idCommande }}</td>
+      <td>{{ c.utilisateur.nom }} {{ c.utilisateur.prenom }}</td>
+      <td>{{ c.utilisateur.adresse }}</td>
+      <td>{{ c.etat }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,39 @@
+<header class="header">
+
+  <!-- Bande supérieure -->
+  <div class="top-bar">
+    <div class="left">Livreur</div>
+
+    <div class="right">
+
+      <!-- Icône recherche -->
+      <i class="fas fa-search" (click)="toggleSearch()" style="cursor:pointer;"></i>
+
+      <!-- Champ de recherche -->
+      <input *ngIf="showSearch"
+             type="text"
+             placeholder="Rechercher..."
+             [(ngModel)]="motCle"
+             (keyup.enter)="rechercher()"
+             class="search-input">
+
+      <!-- Profil -->
+      <i class="fas fa-user" style="cursor:pointer;" (click)="ouvrirProfil()"></i>
+
+    </div>
+  </div>
+
+  <!-- Logo + Slogan -->
+  <div class="main-bar">
+    <h1>ENCOR</h1>
+    <p class="slogan">🌸 La touche finale parfaite</p>
+
+    <!-- Menu -->
+    <nav class="main-nav">
+      <a routerLink="/livreur/valider-livraison" routerLinkActive="active">Valider Livraison</a>
+      <a routerLink="/livreur/etat-livraison" routerLinkActive="active">État de livraison</a>
+      <a routerLink="/livreur/historique-livraison" routerLinkActive="active">Historique livraison</a>
+    </nav>
+  </div>
+
+</header>

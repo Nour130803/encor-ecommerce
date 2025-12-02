@@ -1,0 +1,140 @@
+.intro-box {
+  background-color: #ffffff;
+
+  padding: 15px 20px;
+  width: fit-content;
+  margin: 40px auto 20px auto;
+ 
+}
+/* 🌸 Texte d'introduction centré */
+.welcome-text {
+  font-size: 15px;
+  color: #4a2b2b;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.welcome-text strong {
+  font-weight: 600;
+  color: #7b3e3e;
+}
+
+/* 💎 Logo principal */
+.logo {
+  font-family: 'Playfair Display', serif;
+  color: #5a2d2d;
+  font-size: 32px;
+  margin: 15px 0 10px 0;
+  text-align: center;
+}
+
+/* 🌸 Bande rose fine décorative */
+.header-line {
+  height: 6px;
+  width: 100%;
+  background-color: #e5a4b1;
+  margin: 0 auto;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(229, 164, 177, 0.3);
+}
+
+/* 🎀 Container principal du formulaire */
+
+
+/* 🎀 Bloc principal */
+.verif-container {
+  background-color: #fdeef2;
+  padding: 10px 20px;
+ height: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  font-family: 'Poppins', sans-serif;
+  color: #5a2d2d;
+}
+
+/* 🌸 Ligne décorative */
+.header-line {
+  height: 5px;
+  background-color: #e5a4b1;
+  margin-bottom: 25px;
+  border-radius: 3px;
+}
+
+.title {
+  color: #e91e63;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.instruction {
+  color: #4a2b2b;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/* 🌸 Champ du code */
+.code-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.code-box input {
+  width: 120px;
+  height: 60px;
+  font-size: 26px;
+  text-align: center;
+  border: 1px solid #e0bfc2;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  color: #5a2d2d;
+  font-weight: 600;
+}
+
+.code-box input:focus {
+  outline: none;
+  border-color: #d38c9b;
+  box-shadow: 0 0 6px #f1b6c2;
+}
+
+/* 🌷 Bouton */
+.submit-btn {
+  background-color: #eec7cc;
+  color: #4a2b2b;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.submit-btn:hover {
+  background-color: #e5a4b1;
+  transform: scale(1.03);
+}
+
+/* 💕 Lien */
+.footer-text {
+  font-size: 15px;
+  color: #333;
+}
+
+.footer-text a {
+  color: #a54d67;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}

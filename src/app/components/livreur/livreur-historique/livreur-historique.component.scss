@@ -1,0 +1,103 @@
+/* ===== TITRES ===== */
+.titre {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 30px 0 10px;
+  color: #b30059;
+}
+
+.section-title {
+  margin: 20px 0 10px 5%;
+  font-size: 20px;
+  font-weight: 600;
+  color: #7a0043;
+}
+
+
+/* ===== TABLEAU ===== */
+table {
+  width: 90%;
+  margin: 0 auto 25px;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+
+  thead {
+    background: #9e6e76;
+
+    th {
+      padding: 14px;
+      font-size: 16px;
+      color: #7a0043;
+      font-weight: 600;
+      border-bottom: 2px solid #f2cce1;
+      text-align: left;
+    }
+  }
+
+  tbody {
+
+    td {
+      padding: 14px;
+      font-size: 15px;
+      border-bottom: 1px solid #f3f3f3;
+    }
+
+    tr {
+      transition: 0.3s;
+
+      &:hover {
+        background: #fff5fa;
+      }
+    }
+  }
+}
+
+
+/* ===== ÉTAT DES COMMANDES ===== */
+.etat {
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-align: center;
+  display: inline-block;
+
+  &.en-cours {
+    background: #ffd9ec;
+    color: #b30059;
+  }
+
+  &.livree {
+    background: #d8ffd8;
+    color: #008000;
+  }
+}
+
+
+/* ===== MESSAGE VIDE ===== */
+.vide {
+  text-align: center;
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+    font-size: 14px;
+
+    th, td {
+      padding: 10px;
+    }
+  }
+
+  .section-title {
+    margin-left: 3%;
+  }
+}
